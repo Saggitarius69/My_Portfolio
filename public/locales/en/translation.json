@@ -1,0 +1,150 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "section": {
+    "featuredProjects": "Featured Projects",
+    "getInTouch": "Get In Touch",
+    "education": "Education",
+    "certifications": "Certifications"
+  },
+  "hero": {
+    "greeting": "Hello, I'm",
+    "title": "Web Developer",
+    "description": "Motivated and detail-oriented developer seeking opportunities to gain hands-on experience in dynamic, technology-focused environments. I create modern, responsive web applications with clean code and intuitive user experiences.",
+    "stats": {
+      "projects": "Projects",
+      "years": "Years Learning",
+      "technologies": "Technologies"
+    },
+    "downloadCV": "Download CV",
+    "getInTouch": "Get In Touch",
+    "location": "Dharan 11, Sunsari",
+    "githubProfile": "GitHub Profile",
+    "scrollToAbout": "Scroll to about section"
+  },
+  "about": {
+    "title": "About Me",
+    "subtitle": "Get to know me better",
+    "careerObjective": {
+      "title": "Career Objective",
+      "text": "Motivated and detail-oriented individual seeking an internship to gain hands-on experience in a dynamic, technology-focused environment. With a solid academic background in IT and a good understanding of modern tools and practices, I aim to contribute to real-world projects, develop practical skills, and grow professionally as part of a collaborative team."
+    },
+    "highlights": {
+      "teamPlayer": {
+        "title": "Collaborative Team Player",
+        "text": "Experience working in teams on college projects"
+      },
+      "problemSolver": {
+        "title": "Problem Solver",
+        "text": "Strong critical thinking and problem-solving abilities"
+      }
+    },
+    "education": {
+      "degree1": "BSC. (Hons) Computing",
+      "institution1": "London Metropolitan University",
+      "location1": "Itahari International College",
+      "period1": "2023 - Current",
+      "degree2": "Higher Education in Computer Science",
+      "institution2": "Eureka Higher Secondary School",
+      "location2": "Dharan 04, Sunsari",
+      "period2": "2020 - 2022"
+    },
+    "certifications": {
+      "cert1": "AWS Academy Cloud Foundations",
+      "cert2": "AWS Academy Machine Learning Foundations"
+    }
+  },
+  "projects": {
+    "subtitle": "A showcase of my recent work and contributions",
+    "filters": {
+      "all": "All Projects",
+      "web": "Web Apps",
+      "desktop": "Desktop Apps"
+    },
+    "project1": {
+      "title": "Stockify - Inventory Management System",
+      "description": "A comprehensive inventory management system built with HTML, CSS, and Bootstrap. Features include adding, updating, and tracking inventory with smooth navigation and secure data handling. Integrated role-based access and CRUD functionalities for efficient stock management."
+    },
+    "project2": {
+      "title": "Property Management System",
+      "description": "A Python-based property management system designed to handle land records and bookings efficiently. Features include property viewing, booking management, and an intuitive interface ensuring accuracy, security, and smooth navigation for enhanced user experience."
+    },
+    "project3": {
+      "title": "KitabZone - Library Management",
+      "description": "A collaborative college project for library management handling book transactions, student reservations, and fine management. Built with JSP for frontend, Servlets for processing, and JDBC for database connectivity with MySQL."
+    },
+    "viewCode": "View Code",
+    "liveDemo": "Live Demo"
+  },
+  "contact": {
+    "subtitle": "Let's discuss opportunities and collaborations",
+    "introTitle": "Let's Connect!",
+    "introText": "I'm always interested in new opportunities, collaborations, and interesting projects. Whether you have a question or just want to say hi, feel free to reach out!",
+    "followMe": "Follow Me",
+    "alert": "Thank you for your message! I'll get back to you soon.",
+    "info": {
+      "email": "Email",
+      "phone": "Phone",
+      "location": "Location",
+      "locationValue": "Dharan 11, Sunsari, Nepal"
+    },
+    "social": {
+      "github": "GitHub",
+      "email": "Email"
+    },
+    "form": {
+      "name": "Full Name",
+      "namePlaceholder": "Your full name",
+      "email": "Email Address",
+      "emailPlaceholder": "your.email@example.com",
+      "subject": "Subject",
+      "subjectPlaceholder": "What's this about?",
+      "message": "Message",
+      "messagePlaceholder": "Tell me about your project or just say hello!",
+      "send": "Send Message"
+    }
+  },
+  "footer": {
+    "tagline": "Building digital experiences with passion and precision.",
+    "quickLinks": "Quick Links",
+    "projects": "Projects",
+    "connect": "Connect",
+    "github": "GitHub",
+    "email": "Email",
+    "phone": "Phone",
+    "builtWith": "Built with React & Vite"
+  },
+  "skills": {
+    "title": "Skills & Expertise",
+    "subtitle": "Technologies and abilities I work with",
+    "technical": "Technical Skills",
+    "softTitle": "Soft Skills",
+    "soft": {
+      "timeManagement": {
+        "title": "Time Management",
+        "desc": "Efficient project planning and deadline management"
+      },
+      "criticalThinking": {
+        "title": "Critical Thinking",
+        "desc": "Analytical approach to problem-solving"
+      },
+      "problemSolving": {
+        "title": "Problem Solving",
+        "desc": "Creative solutions to technical challenges"
+      },
+      "teamwork": {
+        "title": "Teamwork",
+        "desc": "Collaborative development and communication"
+      },
+      "communication": {
+        "title": "Communication",
+        "desc": "Clear technical and client communication"
+      }
+    }
+  }
+} 

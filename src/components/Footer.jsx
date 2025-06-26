@@ -1,7 +1,10 @@
 import { Code2 } from "lucide-react"
+import { useTranslation } from "react-i18next"
+import { Link } from "react-router-dom"
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
+  const { t } = useTranslation()
 
   return (
     <footer className="footer">
@@ -12,33 +15,33 @@ const Footer = () => {
               <Code2 />
               <span>Siddhartha Raj Thapa</span>
             </div>
-            <p>Building digital experiences with passion and precision.</p>
+            <p>{t('footer.tagline')}</p>
           </div>
 
           <div className="footer-links">
             <div className="footer-section">
-              <h4>Quick Links</h4>
+              <h4>{t('footer.quickLinks')}</h4>
               <ul>
                 <li>
-                  <a href="#home">Home</a>
+                  <Link to="/">{t('nav.home')}</Link>
                 </li>
                 <li>
-                  <a href="#about">About</a>
+                  <Link to="/about">{t('nav.about')}</Link>
                 </li>
                 <li>
-                  <a href="#skills">Skills</a>
+                  <Link to="/skills">{t('nav.skills')}</Link>
                 </li>
                 <li>
-                  <a href="#projects">Projects</a>
+                  <Link to="/projects">{t('nav.projects')}</Link>
                 </li>
                 <li>
-                  <a href="#contact">Contact</a>
+                  <Link to="/contact">{t('nav.contact')}</Link>
                 </li>
               </ul>
             </div>
 
             <div className="footer-section">
-              <h4>Projects</h4>
+              <h4>{t('footer.projects')}</h4>
               <ul>
                 <li>
                   <a href="https://github.com/Saggitarius69/Stokify_IMS.git" target="_blank" rel="noopener noreferrer">
@@ -63,18 +66,18 @@ const Footer = () => {
             </div>
 
             <div className="footer-section">
-              <h4>Connect</h4>
+              <h4>{t('footer.connect')}</h4>
               <ul>
                 <li>
                   <a href="https://github.com/Saggitarius69" target="_blank" rel="noopener noreferrer">
-                    GitHub
+                    {t('footer.github')}
                   </a>
                 </li>
                 <li>
-                  <a href="mailto:siddarthapa2061@gmail.com">Email</a>
+                  <a href="mailto:siddarthapa2061@gmail.com">{t('footer.email')}</a>
                 </li>
                 <li>
-                  <a href="tel:+9779825005565">Phone</a>
+                  <a href="tel:+9779825005565">{t('footer.phone')}</a>
                 </li>
               </ul>
             </div>
@@ -88,7 +91,7 @@ const Footer = () => {
             </p>
           </div>
           <div className="footer-tech">
-            <p>Built with React & Vite</p>
+            <p>{t('footer.builtWith')}</p>
           </div>
         </div>
       </div>

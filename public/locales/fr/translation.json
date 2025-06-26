@@ -1,0 +1,150 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "skills": "Compétences",
+    "projects": "Projets",
+    "contact": "Contact"
+  },
+  "section": {
+    "featuredProjects": "Projets en vedette",
+    "getInTouch": "Entrer en contact",
+    "education": "Éducation",
+    "certifications": "Certifications"
+  },
+  "hero": {
+    "greeting": "Bonjour, je suis",
+    "title": "Développeur Web",
+    "description": "Développeur motivé et soucieux du détail, cherchant des opportunités pour acquérir une expérience pratique dans des environnements dynamiques axés sur la technologie. Je crée des applications web modernes et réactives avec un code propre et des expériences utilisateur intuitives.",
+    "stats": {
+      "projects": "Projets",
+      "years": "Années d'apprentissage",
+      "technologies": "Technologies"
+    },
+    "downloadCV": "Télécharger le CV",
+    "getInTouch": "Entrer en contact",
+    "location": "Dharan 11, Sunsari",
+    "githubProfile": "Profil GitHub",
+    "scrollToAbout": "Faire défiler jusqu'à la section à propos"
+  },
+  "about": {
+    "title": "À propos de moi",
+    "subtitle": "Apprenez à mieux me connaître",
+    "careerObjective": {
+      "title": "Objectif de carrière",
+      "text": "Individu motivé et soucieux du détail, cherchant un stage pour acquérir une expérience pratique dans un environnement dynamique axé sur la technologie. Avec une solide formation académique en informatique et une bonne compréhension des outils et pratiques modernes, je vise à contribuer à des projets réels, à développer des compétences pratiques et à évoluer professionnellement au sein d'une équipe collaborative."
+    },
+    "highlights": {
+      "teamPlayer": {
+        "title": "Joueur d'équipe collaboratif",
+        "text": "Expérience de travail en équipe sur des projets universitaires"
+      },
+      "problemSolver": {
+        "title": "Résolveur de problèmes",
+        "text": "Solides compétences en réflexion critique et en résolution de problèmes"
+      }
+    },
+    "education": {
+      "degree1": "BSC. (Hons) Computing",
+      "institution1": "London Metropolitan University",
+      "location1": "Itahari International College",
+      "period1": "2023 - Présent",
+      "degree2": "Enseignement supérieur en informatique",
+      "institution2": "Eureka Higher Secondary School",
+      "location2": "Dharan 04, Sunsari",
+      "period2": "2020 - 2022"
+    },
+    "certifications": {
+      "cert1": "AWS Academy Cloud Foundations",
+      "cert2": "AWS Academy Machine Learning Foundations"
+    }
+  },
+  "projects": {
+    "subtitle": "Une vitrine de mes travaux et contributions récents",
+    "filters": {
+      "all": "Tous les projets",
+      "web": "Applications Web",
+      "desktop": "Applications de bureau"
+    },
+    "project1": {
+      "title": "Stockify - Système de gestion des stocks",
+      "description": "Un système complet de gestion des stocks construit avec HTML, CSS et Bootstrap. Les fonctionnalités incluent l'ajout, la mise à jour et le suivi des stocks avec une navigation fluide et une gestion sécurisée des données. Accès basé sur les rôles et fonctionnalités CRUD intégrés pour une gestion efficace des stocks."
+    },
+    "project2": {
+      "title": "Système de gestion immobilière",
+      "description": "Un système de gestion immobilière basé sur Python conçu pour gérer efficacement les dossiers fonciers et les réservations. Les fonctionnalités incluent la visualisation des propriétés, la gestion des réservations et une interface intuitive garantissant précision, sécurité et expérience utilisateur fluide."
+    },
+    "project3": {
+      "title": "KitabZone - Gestion de bibliothèque",
+      "description": "Un projet universitaire collaboratif pour la gestion de bibliothèque, la gestion des transactions de livres, des réservations d'étudiants et des amendes. Construit avec JSP pour le frontend, Servlets pour le traitement et JDBC pour la connectivité à la base de données avec MySQL."
+    },
+    "viewCode": "Voir le code",
+    "liveDemo": "Démo en direct"
+  },
+  "contact": {
+    "subtitle": "Discutons des opportunités et des collaborations",
+    "introTitle": "Restons en contact !",
+    "introText": "Je suis toujours intéressé par de nouvelles opportunités, des collaborations et des projets intéressants. Que vous ayez une question ou que vous vouliez simplement dire bonjour, n'hésitez pas à me contacter !",
+    "followMe": "Suivez-moi",
+    "alert": "Merci pour votre message ! Je vous répondrai bientôt.",
+    "info": {
+      "email": "Email",
+      "phone": "Téléphone",
+      "location": "Emplacement",
+      "locationValue": "Dharan 11, Sunsari, Népal"
+    },
+    "social": {
+      "github": "GitHub",
+      "email": "Email"
+    },
+    "form": {
+      "name": "Nom complet",
+      "namePlaceholder": "Votre nom complet",
+      "email": "Adresse e-mail",
+      "emailPlaceholder": "your.email@example.com",
+      "subject": "Sujet",
+      "subjectPlaceholder": "De quoi s'agit-il ?",
+      "message": "Message",
+      "messagePlaceholder": "Parlez-moi de votre projet ou dites simplement bonjour !",
+      "send": "Envoyer le message"
+    }
+  },
+  "footer": {
+    "tagline": "Créer des expériences numériques avec passion et précision.",
+    "quickLinks": "Liens rapides",
+    "projects": "Projets",
+    "connect": "Connecter",
+    "github": "GitHub",
+    "email": "Email",
+    "phone": "Téléphone",
+    "builtWith": "Construit avec React & Vite"
+  },
+  "skills": {
+    "title": "Compétences et expertise",
+    "subtitle": "Technologies et capacités avec lesquelles je travaille",
+    "technical": "Compétences techniques",
+    "softTitle": "Compétences générales",
+    "soft": {
+      "timeManagement": {
+        "title": "Gestion du temps",
+        "desc": "Planification efficace des projets et gestion des délais"
+      },
+      "criticalThinking": {
+        "title": "Esprit critique",
+        "desc": "Approche analytique de la résolution de problèmes"
+      },
+      "problemSolving": {
+        "title": "Résolution de problèmes",
+        "desc": "Solutions créatives aux défis techniques"
+      },
+      "teamwork": {
+        "title": "Travail d'équipe",
+        "desc": "Développement et communication collaboratifs"
+      },
+      "communication": {
+        "title": "Communication",
+        "desc": "Communication technique et client claire"
+      }
+    }
+  }
+} 

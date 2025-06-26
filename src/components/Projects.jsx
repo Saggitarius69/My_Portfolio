@@ -1,17 +1,18 @@
 "use client"
 
+import { BookOpen, ExternalLink, Filter, Github, Home, Package } from "lucide-react"
 import { useState } from "react"
-import { ExternalLink, Github, Filter, Package, Home, BookOpen } from "lucide-react"
+import { useTranslation } from "react-i18next"
 
 const Projects = () => {
+  const { t } = useTranslation()
   const [activeFilter, setActiveFilter] = useState("all")
 
   const projects = [
     {
       id: 1,
-      title: "Stockify - Inventory Management System",
-      description:
-        "A comprehensive inventory management system built with HTML, CSS, and Bootstrap. Features include adding, updating, and tracking inventory with smooth navigation and secure data handling. Integrated role-based access and CRUD functionalities for efficient stock management.",
+      title: t('projects.project1.title'),
+      description: t('projects.project1.description'),
       image: "/placeholder.svg?height=300&width=400",
       technologies: ["HTML", "CSS", "Bootstrap", "JavaScript"],
       category: "web",
@@ -21,9 +22,8 @@ const Projects = () => {
     },
     {
       id: 2,
-      title: "Property Management System",
-      description:
-        "A Python-based property management system designed to handle land records and bookings efficiently. Features include property viewing, booking management, and an intuitive interface ensuring accuracy, security, and smooth navigation for enhanced user experience.",
+      title: t('projects.project2.title'),
+      description: t('projects.project2.description'),
       image: "/placeholder.svg?height=300&width=400",
       technologies: ["Python", "Tkinter", "SQLite"],
       category: "desktop",
@@ -33,9 +33,8 @@ const Projects = () => {
     },
     {
       id: 3,
-      title: "KitabZone - Library Management",
-      description:
-        "A collaborative college project for library management handling book transactions, student reservations, and fine management. Built with JSP for frontend, Servlets for processing, and JDBC for database connectivity with MySQL.",
+      title: t('projects.project3.title'),
+      description: t('projects.project3.description'),
       image: "/placeholder.svg?height=300&width=400",
       technologies: ["JSP", "Servlets", "JDBC", "MySQL"],
       category: "web",
@@ -46,9 +45,9 @@ const Projects = () => {
   ]
 
   const filters = [
-    { id: "all", label: "All Projects", count: projects.length },
-    { id: "web", label: "Web Apps", count: projects.filter((p) => p.category === "web").length },
-    { id: "desktop", label: "Desktop Apps", count: projects.filter((p) => p.category === "desktop").length },
+    { id: "all", label: t('projects.filters.all'), count: projects.length },
+    { id: "web", label: t('projects.filters.web'), count: projects.filter((p) => p.category === "web").length },
+    { id: "desktop", label: t('projects.filters.desktop'), count: projects.filter((p) => p.category === "desktop").length },
   ]
 
   const filteredProjects =
@@ -58,8 +57,8 @@ const Projects = () => {
     <section id="projects" className="projects">
       <div className="container">
         <div className="section-header">
-          <h2 className="section-title">Featured Projects</h2>
-          <p className="section-subtitle">A showcase of my recent work and contributions</p>
+          <h2 className="section-title">{t('section.featuredProjects')}</h2>
+          <p className="section-subtitle">{t('projects.subtitle')}</p>
         </div>
 
         <div className="projects-filters">
@@ -101,12 +100,12 @@ const Projects = () => {
                 <div className="project-actions">
                   <a href={project.github} target="_blank" rel="noopener noreferrer" className="project-link">
                     <Github size={18} />
-                    View Code
+                    {t('projects.viewCode')}
                   </a>
                   {project.demo && (
                     <a href={project.demo} target="_blank" rel="noopener noreferrer" className="project-link primary">
                       <ExternalLink size={18} />
-                      Live Demo
+                      {t('projects.liveDemo')}
                     </a>
                   )}
                 </div>

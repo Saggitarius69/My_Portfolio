@@ -1,8 +1,10 @@
 "use client"
 
 import { ArrowDown, Download, Github, Mail, MapPin } from "lucide-react"
+import { useTranslation } from "react-i18next"
 
 const Hero = ({ scrollToSection }) => {
+  const { t } = useTranslation()
   return (
     <section id="home" className="hero">
       <div className="hero-background">
@@ -15,30 +17,28 @@ const Hero = ({ scrollToSection }) => {
           <div className="hero-text">
             <div className="hero-greeting">
               <span className="wave">👋</span>
-              <span>Hello, I'm</span>
+              <span>{t('hero.greeting')}</span>
             </div>
             <h1 className="hero-name">Siddhartha Raj Thapa</h1>
             <h2 className="hero-title">
-              <span className="gradient-text">Web Developer</span>
+              <span className="gradient-text">{t('hero.title')}</span>
             </h2>
             <p className="hero-description">
-              Motivated and detail-oriented developer seeking opportunities to gain hands-on experience in dynamic,
-              technology-focused environments. I create modern, responsive web applications with clean code and
-              intuitive user experiences.
+              {t('hero.description')}
             </p>
 
             <div className="hero-stats">
               <div className="stat">
                 <span className="stat-number">3+</span>
-                <span className="stat-label">Projects</span>
+                <span className="stat-label">{t('hero.stats.projects')}</span>
               </div>
               <div className="stat">
                 <span className="stat-number">2+</span>
-                <span className="stat-label">Years Learning</span>
+                <span className="stat-label">{t('hero.stats.years')}</span>
               </div>
               <div className="stat">
                 <span className="stat-number">5+</span>
-                <span className="stat-label">Technologies</span>
+                <span className="stat-label">{t('hero.stats.technologies')}</span>
               </div>
             </div>
 
@@ -50,11 +50,11 @@ const Hero = ({ scrollToSection }) => {
                 className="btn btn-primary"
               >
                 <Download size={20} />
-                Download CV
+                {t('hero.downloadCV')}
               </a>
-              <button className="btn btn-secondary" onClick={() => scrollToSection("contact")}>
+              <button className="btn btn-secondary" onClick={() => scrollToSection("contact")}> 
                 <Mail size={20} />
-                Get In Touch
+                {t('hero.getInTouch')}
               </button>
             </div>
 
@@ -65,12 +65,12 @@ const Hero = ({ scrollToSection }) => {
               </div>
               <div className="contact-item">
                 <MapPin size={16} />
-                <span>Dharan 11, Sunsari</span>
+                <span>{t('hero.location')}</span>
               </div>
               <div className="contact-item">
                 <Github size={16} />
                 <a href="https://github.com/Saggitarius69" target="_blank" rel="noopener noreferrer">
-                  GitHub Profile
+                  {t('hero.githubProfile')}
                 </a>
               </div>
             </div>
@@ -95,7 +95,7 @@ const Hero = ({ scrollToSection }) => {
         <button
           className="scroll-indicator"
           onClick={() => scrollToSection("about")}
-          aria-label="Scroll to about section"
+          aria-label={t('hero.scrollToAbout')}
         >
           <ArrowDown />
         </button>

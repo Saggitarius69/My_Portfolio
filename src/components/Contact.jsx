@@ -1,9 +1,11 @@
 "use client"
 
+import { Github, Mail, MapPin, Phone, Send } from "lucide-react"
 import { useState } from "react"
-import { Mail, Phone, MapPin, Send, Github } from "lucide-react"
+import { useTranslation } from "react-i18next"
 
 const Contact = () => {
+  const { t } = useTranslation()
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -23,27 +25,27 @@ const Contact = () => {
     // Handle form submission here
     console.log("Form submitted:", formData)
     // You can integrate with a form service like Formspree, Netlify Forms, etc.
-    alert("Thank you for your message! I'll get back to you soon.")
+    alert(t('contact.alert'))
     setFormData({ name: "", email: "", subject: "", message: "" })
   }
 
   const contactInfo = [
     {
       icon: <Mail />,
-      label: "Email",
+      label: t('contact.info.email'),
       value: "siddarthapa2061@gmail.com",
       link: "mailto:siddarthapa2061@gmail.com",
     },
     {
       icon: <Phone />,
-      label: "Phone",
+      label: t('contact.info.phone'),
       value: "+977 9825005565",
       link: "tel:+9779825005565",
     },
     {
       icon: <MapPin />,
-      label: "Location",
-      value: "Dharan 11, Sunsari, Nepal",
+      label: t('contact.info.location'),
+      value: t('contact.info.locationValue'),
       link: null,
     },
   ]
@@ -51,13 +53,13 @@ const Contact = () => {
   const socialLinks = [
     {
       icon: <Github />,
-      label: "GitHub",
+      label: t('contact.social.github'),
       url: "https://github.com/Saggitarius69",
       color: "#333",
     },
     {
       icon: <Mail />,
-      label: "Email",
+      label: t('contact.social.email'),
       url: "mailto:siddarthapa2061@gmail.com",
       color: "#ea4335",
     },
@@ -67,18 +69,15 @@ const Contact = () => {
     <section id="contact" className="contact">
       <div className="container">
         <div className="section-header">
-          <h2 className="section-title">Get In Touch</h2>
-          <p className="section-subtitle">Let's discuss opportunities and collaborations</p>
+          <h2 className="section-title">{t('section.getInTouch')}</h2>
+          <p className="section-subtitle">{t('contact.subtitle')}</p>
         </div>
 
         <div className="contact-content">
           <div className="contact-info">
             <div className="contact-intro">
-              <h3>Let's Connect!</h3>
-              <p>
-                I'm always interested in new opportunities, collaborations, and interesting projects. Whether you have a
-                question or just want to say hi, feel free to reach out!
-              </p>
+              <h3>{t('contact.introTitle')}</h3>
+              <p>{t('contact.introText')}</p>
             </div>
 
             <div className="contact-details">
@@ -100,7 +99,7 @@ const Contact = () => {
             </div>
 
             <div className="social-links">
-              <h4>Follow Me</h4>
+              <h4>{t('contact.followMe')}</h4>
               <div className="social-grid">
                 {socialLinks.map((social, index) => (
                   <a
@@ -122,7 +121,7 @@ const Contact = () => {
           <div className="contact-form-container">
             <form className="contact-form" onSubmit={handleSubmit}>
               <div className="form-group">
-                <label htmlFor="name">Full Name</label>
+                <label htmlFor="name">{t('contact.form.name')}</label>
                 <input
                   type="text"
                   id="name"
@@ -130,12 +129,12 @@ const Contact = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  placeholder="Your full name"
+                  placeholder={t('contact.form.namePlaceholder')}
                 />
               </div>
 
               <div className="form-group">
-                <label htmlFor="email">Email Address</label>
+                <label htmlFor="email">{t('contact.form.email')}</label>
                 <input
                   type="email"
                   id="email"
@@ -143,12 +142,12 @@ const Contact = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  placeholder="your.email@example.com"
+                  placeholder={t('contact.form.emailPlaceholder')}
                 />
               </div>
 
               <div className="form-group">
-                <label htmlFor="subject">Subject</label>
+                <label htmlFor="subject">{t('contact.form.subject')}</label>
                 <input
                   type="text"
                   id="subject"
@@ -156,12 +155,12 @@ const Contact = () => {
                   value={formData.subject}
                   onChange={handleChange}
                   required
-                  placeholder="What's this about?"
+                  placeholder={t('contact.form.subjectPlaceholder')}
                 />
               </div>
 
               <div className="form-group">
-                <label htmlFor="message">Message</label>
+                <label htmlFor="message">{t('contact.form.message')}</label>
                 <textarea
                   id="message"
                   name="message"
@@ -169,13 +168,13 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   rows="5"
-                  placeholder="Tell me about your project or just say hello!"
+                  placeholder={t('contact.form.messagePlaceholder')}
                 ></textarea>
               </div>
 
               <button type="submit" className="submit-btn">
                 <Send size={20} />
-                Send Message
+                {t('contact.form.send')}
               </button>
             </form>
           </div>

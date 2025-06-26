@@ -1,6 +1,8 @@
-import { Code, Palette, Database, GitBranch, Globe, Brain, Clock, Users, MessageCircle, Target } from "lucide-react"
+import { Brain, Clock, Code, Database, GitBranch, Globe, MessageCircle, Palette, Target, Users } from "lucide-react"
+import { useTranslation } from "react-i18next"
 
 const Skills = () => {
+  const { t } = useTranslation()
   const technicalSkills = [
     { name: "HTML/CSS", level: 90, icon: <Code />, color: "#e34c26" },
     { name: "Python & Django", level: 85, icon: <Code />, color: "#3776ab" },
@@ -11,24 +13,24 @@ const Skills = () => {
   ]
 
   const softSkills = [
-    { name: "Time Management", icon: <Clock />, description: "Efficient project planning and deadline management" },
-    { name: "Critical Thinking", icon: <Brain />, description: "Analytical approach to problem-solving" },
-    { name: "Problem Solving", icon: <Target />, description: "Creative solutions to technical challenges" },
-    { name: "Teamwork", icon: <Users />, description: "Collaborative development and communication" },
-    { name: "Communication", icon: <MessageCircle />, description: "Clear technical and client communication" },
+    { name: t('skills.soft.timeManagement.title'), icon: <Clock />, description: t('skills.soft.timeManagement.desc') },
+    { name: t('skills.soft.criticalThinking.title'), icon: <Brain />, description: t('skills.soft.criticalThinking.desc') },
+    { name: t('skills.soft.problemSolving.title'), icon: <Target />, description: t('skills.soft.problemSolving.desc') },
+    { name: t('skills.soft.teamwork.title'), icon: <Users />, description: t('skills.soft.teamwork.desc') },
+    { name: t('skills.soft.communication.title'), icon: <MessageCircle />, description: t('skills.soft.communication.desc') },
   ]
 
   return (
     <section id="skills" className="skills">
       <div className="container">
         <div className="section-header">
-          <h2 className="section-title">Skills & Expertise</h2>
-          <p className="section-subtitle">Technologies and abilities I work with</p>
+          <h2 className="section-title">{t('skills.title')}</h2>
+          <p className="section-subtitle">{t('skills.subtitle')}</p>
         </div>
 
         <div className="skills-content">
           <div className="technical-skills">
-            <h3>Technical Skills</h3>
+            <h3>{t('skills.technical')}</h3>
             <div className="skills-grid">
               {technicalSkills.map((skill, index) => (
                 <div key={index} className="skill-card">
@@ -56,7 +58,7 @@ const Skills = () => {
           </div>
 
           <div className="soft-skills">
-            <h3>Soft Skills</h3>
+            <h3>{t('skills.softTitle')}</h3>
             <div className="soft-skills-grid">
               {softSkills.map((skill, index) => (
                 <div key={index} className="soft-skill-card">

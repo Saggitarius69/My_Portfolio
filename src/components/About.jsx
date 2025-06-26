@@ -1,30 +1,32 @@
-import { GraduationCap, Award, Target, Users } from "lucide-react"
+import { Award, GraduationCap, Target, Users } from "lucide-react"
+import { useTranslation } from "react-i18next"
 
 const About = () => {
+  const { t } = useTranslation()
   const education = [
     {
-      degree: "BSC. (Hons) Computing",
-      institution: "London Metropolitan University",
-      location: "Itahari International College",
-      period: "2023 - Current",
+      degree: t('about.education.degree1'),
+      institution: t('about.education.institution1'),
+      location: t('about.education.location1'),
+      period: t('about.education.period1'),
       icon: <GraduationCap />,
     },
     {
-      degree: "Higher Education in Computer Science",
-      institution: "Eureka Higher Secondary School",
-      location: "Dharan 04, Sunsari",
-      period: "2020 - 2022",
+      degree: t('about.education.degree2'),
+      institution: t('about.education.institution2'),
+      location: t('about.education.location2'),
+      period: t('about.education.period2'),
       icon: <Award />,
     },
   ]
 
   const certifications = [
     {
-      name: "AWS Academy Cloud Foundations",
+      name: t('about.certifications.cert1'),
       link: "https://drive.google.com/drive/folders/1wIHpy14lv866urMmko24lAQsneAZIn-n?usp=sharing",
     },
     {
-      name: "AWS Academy Machine Learning Foundations",
+      name: t('about.certifications.cert2'),
       link: "https://drive.google.com/drive/folders/1P2EXlSN_Hjl-LNgnuESgAmR6GkOQB1FX?usp=sharing",
     },
   ]
@@ -33,8 +35,8 @@ const About = () => {
     <section id="about" className="about">
       <div className="container">
         <div className="section-header">
-          <h2 className="section-title">About Me</h2>
-          <p className="section-subtitle">Get to know me better</p>
+          <h2 className="section-title">{t('about.title')}</h2>
+          <p className="section-subtitle">{t('about.subtitle')}</p>
         </div>
 
         <div className="about-content">
@@ -43,28 +45,23 @@ const About = () => {
               <div className="card-icon">
                 <Target />
               </div>
-              <h3>Career Objective</h3>
-              <p>
-                Motivated and detail-oriented individual seeking an internship to gain hands-on experience in a dynamic,
-                technology-focused environment. With a solid academic background in IT and a good understanding of
-                modern tools and practices, I aim to contribute to real-world projects, develop practical skills, and
-                grow professionally as part of a collaborative team.
-              </p>
+              <h3>{t('about.careerObjective.title')}</h3>
+              <p>{t('about.careerObjective.text')}</p>
             </div>
 
             <div className="about-highlights">
               <div className="highlight">
                 <Users className="highlight-icon" />
                 <div>
-                  <h4>Collaborative Team Player</h4>
-                  <p>Experience working in teams on college projects</p>
+                  <h4>{t('about.highlights.teamPlayer.title')}</h4>
+                  <p>{t('about.highlights.teamPlayer.text')}</p>
                 </div>
               </div>
               <div className="highlight">
                 <Target className="highlight-icon" />
                 <div>
-                  <h4>Problem Solver</h4>
-                  <p>Strong critical thinking and problem-solving abilities</p>
+                  <h4>{t('about.highlights.problemSolver.title')}</h4>
+                  <p>{t('about.highlights.problemSolver.text')}</p>
                 </div>
               </div>
             </div>
@@ -72,7 +69,7 @@ const About = () => {
 
           <div className="about-details">
             <div className="education-section">
-              <h3>Education</h3>
+              <h3>{t('section.education')}</h3>
               <div className="timeline">
                 {education.map((edu, index) => (
                   <div key={index} className="timeline-item">
@@ -89,7 +86,7 @@ const About = () => {
             </div>
 
             <div className="certifications-section">
-              <h3>Certifications</h3>
+              <h3>{t('section.certifications')}</h3>
               <div className="certifications-list">
                 {certifications.map((cert, index) => (
                   <a

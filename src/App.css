@@ -1306,7 +1306,7 @@ section {
     left: 0;
     right: 0;
     background: rgba(15, 23, 42, 0.98);
-    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter-: blur(10px);
     flex-direction: column;
     padding: 2rem;
     gap: 1rem;
