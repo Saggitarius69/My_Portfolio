@@ -1,6 +1,7 @@
 import * as React from "react"
 import { Slot } from "@radix-ui/react-slot"
 import { cva, type VariantProps } from "class-variance-authority"
+import gsap from "gsap"
 
 import { cn } from "@/lib/utils"
 
@@ -42,10 +43,30 @@ export interface ButtonProps
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant, size, asChild = false, ...props }, ref) => {
     const Comp = asChild ? Slot : "button"
+    const localRef = React.useRef<HTMLButtonElement>(null);
+    // Merge forwarded ref and local ref
+    const setRefs = (el: HTMLButtonElement) => {
+      if (typeof ref === "function") ref(el);
+      else if (ref) (ref as React.MutableRefObject<HTMLButtonElement | null>).current = el;
+      localRef.current = el;
+    };
+    // GSAP hover handlers
+    const handleMouseEnter = () => {
+      if (localRef.current) {
+        gsap.to(localRef.current, { scale: 1.07, duration: 0.18, ease: "power2.out" });
+      }
+    };
+    const handleMouseLeave = () => {
+      if (localRef.current) {
+        gsap.to(localRef.current, { scale: 1, duration: 0.18, ease: "power2.out" });
+      }
+    };
     return (
       <Comp
         className={cn(buttonVariants({ variant, size, className }))}
-        ref={ref}
+        ref={setRefs}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
         {...props}
       />
     )

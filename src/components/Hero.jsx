@@ -2,9 +2,33 @@
 
 import { ArrowDown, Download, Github, Mail, MapPin } from "lucide-react"
 import { useTranslation } from "react-i18next"
+import { useEffect, useRef } from "react"
+import gsap from "gsap"
 
 const Hero = ({ scrollToSection }) => {
   const { t } = useTranslation()
+  // Refs for animation
+  const heroTextRef = useRef(null);
+  const statsRef = useRef([]);
+
+  useEffect(() => {
+    // Fade-in and slide-up for hero text
+    gsap.from(heroTextRef.current, {
+      opacity: 1,
+      y: 50,
+      duration: 1,
+      ease: "power3.out"
+    });
+    // Staggered animation for stats
+    gsap.from(statsRef.current, {
+      opacity: 1,
+      y: 30,
+      stagger: 0.2,
+      duration: 0.8,
+      delay: 0.7
+    });
+  }, []);
+
   return (
     <section id="home" className="hero">
       <div className="hero-background">
@@ -14,7 +38,7 @@ const Hero = ({ scrollToSection }) => {
 
       <div className="container">
         <div className="hero-content">
-          <div className="hero-text">
+          <div className="hero-text" ref={heroTextRef}>
             <div className="hero-greeting">
               <span className="wave">👋</span>
               <span>{t('hero.greeting')}</span>
@@ -28,15 +52,15 @@ const Hero = ({ scrollToSection }) => {
             </p>
 
             <div className="hero-stats">
-              <div className="stat">
+              <div className="stat" ref={el => statsRef.current[0] = el}>
                 <span className="stat-number">3+</span>
                 <span className="stat-label">{t('hero.stats.projects')}</span>
               </div>
-              <div className="stat">
+              <div className="stat" ref={el => statsRef.current[1] = el}>
                 <span className="stat-number">2+</span>
                 <span className="stat-label">{t('hero.stats.years')}</span>
               </div>
-              <div className="stat">
+              <div className="stat" ref={el => statsRef.current[2] = el}>
                 <span className="stat-number">5+</span>
                 <span className="stat-label">{t('hero.stats.technologies')}</span>
               </div>
@@ -80,7 +104,7 @@ const Hero = ({ scrollToSection }) => {
             <div className="hero-avatar">
               <div className="avatar-ring"></div>
               <div className="avatar-image">
-                <span className="avatar-text">ST</span>
+                <img src="/me.jpg" alt="Profile" style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: 'inherit' }} />
               </div>
               <div className="floating-elements">
                 <div className="floating-element element-1">💻</div>

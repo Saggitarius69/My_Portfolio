@@ -1,5 +1,7 @@
 import { Brain, Clock, Code, Database, GitBranch, Globe, MessageCircle, Palette, Target, Users } from "lucide-react"
 import { useTranslation } from "react-i18next"
+import { useEffect, useRef } from "react"
+import gsap from "gsap"
 
 const Skills = () => {
   const { t } = useTranslation()
@@ -20,6 +22,18 @@ const Skills = () => {
     { name: t('skills.soft.communication.title'), icon: <MessageCircle />, description: t('skills.soft.communication.desc') },
   ]
 
+  const skillCardsRef = useRef([]);
+
+  useEffect(() => {
+    gsap.from(skillCardsRef.current, {
+      opacity: 0,
+      y: 40,
+      stagger: 0.15,
+      duration: 0.7,
+      ease: "power2.out"
+    });
+  }, []);
+
   return (
     <section id="skills" className="skills">
       <div className="container">
@@ -33,24 +47,18 @@ const Skills = () => {
             <h3>{t('skills.technical')}</h3>
             <div className="skills-grid">
               {technicalSkills.map((skill, index) => (
-                <div key={index} className="skill-card">
+                <div
+                  key={index}
+                  className="skill-card"
+                  ref={el => skillCardsRef.current[index] = el}
+                >
                   <div className="skill-header">
                     <div className="skill-icon" style={{ color: skill.color }}>
                       {skill.icon}
                     </div>
                     <div className="skill-info">
                       <h4>{skill.name}</h4>
-                      <span className="skill-percentage">{skill.level}%</span>
                     </div>
-                  </div>
-                  <div className="skill-bar">
-                    <div
-                      className="skill-progress"
-                      style={{
-                        width: `${skill.level}%`,
-                        backgroundColor: skill.color,
-                      }}
-                    ></div>
                   </div>
                 </div>
               ))}
@@ -69,6 +77,16 @@ const Skills = () => {
               ))}
             </div>
           </div>
+        </div>
+
+        {/* Featured Project(s) section */}
+        <div className="featured-projects" style={{ marginTop: 32 }}>
+          <h3>Featured Project(s)</h3>
+          <ul>
+            <li><strong>Stokify IMS</strong> (Inventory Management System)</li>
+            <li><strong>Land Rental System (Python)</strong></li>
+            <li><strong>Kitab Zone (JSP/Servlets)</strong></li>
+          </ul>
         </div>
       </div>
     </section>

@@ -1,8 +1,9 @@
 "use client"
 
 import { Github, Mail, MapPin, Phone, Send } from "lucide-react"
-import { useState } from "react"
+import { useState, useRef } from "react"
 import { useTranslation } from "react-i18next"
+import gsap from "gsap"
 
 const Contact = () => {
   const { t } = useTranslation()
@@ -12,6 +13,7 @@ const Contact = () => {
     subject: "",
     message: "",
   })
+  const formContainerRef = useRef(null);
 
   const handleChange = (e) => {
     setFormData({
@@ -24,7 +26,14 @@ const Contact = () => {
     e.preventDefault()
     // Handle form submission here
     console.log("Form submitted:", formData)
-    // You can integrate with a form service like Formspree, Netlify Forms, etc.
+    // Animate form container with bounce
+    if (formContainerRef.current) {
+      gsap.fromTo(
+        formContainerRef.current,
+        { scale: 1 },
+        { scale: 1.08, duration: 0.18, yoyo: true, repeat: 1, ease: "bounce.out" }
+      );
+    }
     alert(t('contact.alert'))
     setFormData({ name: "", email: "", subject: "", message: "" })
   }
@@ -118,7 +127,7 @@ const Contact = () => {
             </div>
           </div>
 
-          <div className="contact-form-container">
+          <div className="contact-form-container" ref={formContainerRef}>
             <form className="contact-form" onSubmit={handleSubmit}>
               <div className="form-group">
                 <label htmlFor="name">{t('contact.form.name')}</label>

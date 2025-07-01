@@ -1,12 +1,17 @@
 "use client"
 
 import { BookOpen, ExternalLink, Filter, Github, Home, Package } from "lucide-react"
-import { useState } from "react"
+import { useState, useEffect, useRef } from "react"
 import { useTranslation } from "react-i18next"
+import gsap from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Projects = () => {
   const { t } = useTranslation()
   const [activeFilter, setActiveFilter] = useState("all")
+  const cardRefs = useRef([]);
 
   const projects = [
     {
@@ -53,6 +58,28 @@ const Projects = () => {
   const filteredProjects =
     activeFilter === "all" ? projects : projects.filter((project) => project.category === activeFilter)
 
+  useEffect(() => {
+    cardRefs.current.forEach(card => {
+      if (card) {
+        gsap.from(card, {
+          scrollTrigger: {
+            trigger: card,
+            start: "top 80%",
+            toggleActions: "play none none none"
+          },
+          opacity: 0,
+          y: 40,
+          duration: 0.8,
+          ease: "power2.out"
+        });
+      }
+    });
+    // Cleanup
+    return () => {
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    };
+  }, [filteredProjects]);
+
   return (
     <section id="projects" className="projects">
       <div className="container">
@@ -76,8 +103,12 @@ const Projects = () => {
         </div>
 
         <div className="projects-grid">
-          {filteredProjects.map((project) => (
-            <div key={project.id} className="project-card">
+          {filteredProjects.map((project, idx) => (
+            <div
+              key={project.id}
+              className="project-card"
+              ref={el => cardRefs.current[idx] = el}
+            >
               <div className="project-image">
                 <img src={project.image || "/placeholder.svg"} alt={project.title} />
                 <div className="project-overlay">
