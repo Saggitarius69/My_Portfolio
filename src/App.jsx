@@ -10,6 +10,7 @@ import Header from "./components/Header"
 import Hero from "./components/Hero"
 import Projects from "./components/Projects"
 import Skills from "./components/Skills"
+import Blogs from "./components/Blogs"
 
 function App() {
   const { t, i18n } = useTranslation()
@@ -21,6 +22,7 @@ function App() {
     if (pathname.startsWith("/about")) return "about"
     if (pathname.startsWith("/skills")) return "skills"
     if (pathname.startsWith("/projects")) return "projects"
+    if (pathname.startsWith("/blog")) return "blog"
     if (pathname.startsWith("/contact")) return "contact"
     return "home"
   }
@@ -42,6 +44,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/skills" element={<Skills />} />
           <Route path="/projects" element={<Projects />} />
+          <Route path="/blog" element={<Blogs />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </main>

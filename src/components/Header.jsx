@@ -15,6 +15,7 @@ const Header = ({ activeSection }) => {
     { id: "about", label: t('nav.about'), path: "/about" },
     { id: "skills", label: t('nav.skills'), path: "/skills" },
     { id: "projects", label: t('nav.projects'), path: "/projects" },
+    { id: "blog", label: "Blog", path: "/blog" },
     { id: "contact", label: t('nav.contact'), path: "/contact" },
   ]
 
